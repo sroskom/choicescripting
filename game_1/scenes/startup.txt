@@ -1,0 +1,82 @@
+*title Freedom
+*author Sterling Roskom
+*scene_list
+  startup
+  escape_cell
+  ending
+
+*create Aggression 50
+*create Time 0630
+
+*goto_scene escape_cell
+
+Play as a man on the run, on a hopeless mission to escape his pursuers and make it to the safety which lies beyond the border... 
+
+This short, but exhilirating adventure takes place in an unamed urban sprawl, from high securtiy lockdown, to busy, cobbled, merchant alleys - as you attempt to reach the saftey on the other side of the border within the space of a day.
+
+*link http://www.choiceofgames.com/LICENSE-1.0.txt
+
+*page_break
+
+Your day starts at ${Time} hours. You have until sunset (eta 2030 hours) before the border closes.
+
+*page_break
+
+Darkness. Headache. Your past is a blur - an incorherrent blur without memories. All you know is the pounding inside your head. You fear to open your eyes; somehow you know you won't like what you see. The air is still, quiet.. hazed with the smell of dusty concrete. You feel the sun's warmth on your face, and you open your eyes to see sunlight coming from the spaces in-between the metal bars of a prison cell window.
+
+Great.
+
+*temp observedShoulder false
+*temp headache true
+*temp looked false
+*temp moved false
+*label bed
+*choice
+  *selectable_if ((not (looked)) or (not (headache))) #Look around from where you are laying.
+    *set Time + 1
+    *if looked
+      *set looked true
+      *if headache
+        *set Aggression + 1
+        You look around, but your headache makes it too difficult to observe anything.
+        *goto bed
+      *else
+        You notice an inconspicous trapdoor at the ceiling of your cell. You don't know where you are, but you decide that you have to escape.
+
+        *if observedShoulder
+          But first, this shoulder...
+        *else
+          *set observedShoulder true
+          Sitting up.. -Ahhhh!!!  ..intense pain in your arm - yeah, it's dislocated.
+
+        After a few painful attmepts, you manage to rotate your arm back in place. Not that it's going to take much abuse after this - I'd better be careful with it.
+        *finish try to open the trapdoor
+    *else
+      *set Aggression - 1
+      *set looked true
+      You realize that you're laying on a creaky spring bed. Looking around your cell you see no door or other opening besides the barred hole that made up the window. You wonder idly how you got in
+      *if headache
+        here, as your headache flares up.
+        *goto bed
+      *else
+        here.
+        *goto bed
+
+  *selectable_if ((not (moved)) or (not (headache))) #Try to sit up.
+    *set Aggression + 2
+    *set Time + 1
+    *set headache true
+    *if not (moved)
+      *set moved true
+      You try to sit up, but suddenly pain sears through your left arm and you flop back down on the bed with a blazing headache.
+      *goto bed
+    *else
+      *set observedShoulder true
+      Your arm feels dislocated at the shoulder; it's going to be a tough one to fix. You ease back onto the bed; there is nowhere to go anyway...
+      *goto bed
+  *if (headache) #Stay calm and wait for your headache to pass.
+    *set Aggression -2
+    *set Time + 3
+    You rest a few minutes and your headache eases up.
+    *set headache false
+    *goto bed

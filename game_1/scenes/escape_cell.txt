@@ -1,0 +1,47 @@
+The trapdoor doesn't budge. You bang, beat, and yell at it. Nothing happens.
+
+Defeated, you walk over to the barred window. The Sun's warmth feels comforting.. You hear birds, and even, it sounds like - kids playing a game of ball or something. How did you get here? How did it come to this? Why can't you remember your past..
+
+Suddendly there is noise coming from the trapdoor. You hear chainlink - and then with a long, shrill creaking, the heavy metal trapdoor lifts open.
+*choice
+  #Stay where you are.
+    *set Aggression - 1
+    You apprehensively back up into a corner. You're ready to fight if thing's get ugly..
+    *goto cont_1
+  #Rush at the opening and make a break for it.
+    *set Aggression + 1
+    You rush headlong toward the opening, jumping up, hoping to grab onto a ladder or something. Pain sears through your skull as you are kicked in the face with a heavy boot, sending you sprawling into a corner of the cell.
+    *goto cont_1 
+*label cont_1
+A big man in camoflauge army fatigues lowers himself into the cell. Someone above shuts the trapdoor behind him. There is a tense, adrenaline infused silence - the only movement comes from the wall of dust particles passing across the Sun's light rays, over the soldier.. who, stands there.
+
+*choice
+  #Say something.
+    You decide to speak up.
+
+    "Where am I.."
+    *page_break
+    *goto cont_2
+  #Stay quiet.
+    *set Aggression - 1
+    You decide not to speak up, and wait for the soldier to make the first move.
+    *page_break
+    *goto cont_2
+*label cont_2
+With a heavy foriegn accent that sounds Russian, the soldier says, "You are in max lockdown. This is Chacao police station. Nobody knows you are here." He pauses - "You will tell me what I want to know." With that, he marches towards you, with fists in balls.
+
+*choice
+  #Unload on his ass
+    *set Aggression + 2
+    Fuck this - you go willy nilly on his ass. This is a stout dude, but you tackle him down. You get in a few good punches to his face before he starts putting up his block. Then in brief moment, he catches in the forehead with an elbow. Your head swims, and then you feel a kick in the guts. As you are gasping for air, he kicks you over so that you sprawl out on the floor.
+    *page_break
+    *goto cont_3
+  #Protect your left arm and curl up defensively
+    *set Aggression - 2
+    You curl up defensively in the corner - "Wait! just tell me what you want to know!"
+    *page_break
+    The solider shakes his head, with a grim, definite smile, somehow seeming to say "sorry, but..." - "Now now, you know I can't trust a word you tell me till I pound you a little, let you know I mean business, first, eh?" He's a big man, over 7 feet tall. He reaches down, grabs your ankle, pulling you out of the corner and throwing you against the other side of the cell. As you try to recover, he walks over, and kicks you hard in the side, sending you sprawling out on the floor.
+    *page_break
+    *goto cont_3
+*label cont_3
+
