@@ -1,0 +1,4 @@
+*stat_chart
+  opposed_pair Aggression
+    Calmness
+  text Time
